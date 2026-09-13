@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "Vishwas Khattar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp32",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "batteryPot",
+      "top": 35,
+      "left": 300,
+      "attrs": {
+        "value": "512"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp32:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp32:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "batteryPot:VCC",
+      "esp32:3V3",
+      "red",
+      []
+    ],
+    [
+      "batteryPot:GND",
+      "esp32:GND.1",
+      "black",
+      []
+    ],
+    [
+      "batteryPot:SIG",
+      "esp32:D34",
+      "green",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
